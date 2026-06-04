@@ -2,10 +2,206 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>FaaS WebApp - DNLC</title>
-</head>
-<body>
-    <h1>Hallo von Daniel</h1>
-    <p>Diese Seite läuft auf Azure App Service.</p>
-</body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Da Daniele</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #FAF3E0;
+            --espresso: #2D1810;
+            --tomato: #C73E1D;
+            --basilico: #4A7C59;
+            --formaggio: #E8B547;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--cream);
+            color: var(--espresso);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid rgba(45, 24, 16, 0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span { color: var(--tomato); }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--espresso);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--tomato); }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 5rem 4rem;
+            gap: 4rem;
+            min-height: 80vh;
+        }
+
+        .hero-text .tag {
+            color: var(--tomato);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 em {
+            color: var(--tomato);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: rgba(45, 24, 16, 0.75);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--espresso);
+            color: var(--cream);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--tomato);
+            transform: translateY(-2px);
+        }
+
+        .pizza-svg {
+            display: block;
+            margin: 0 auto;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        .menu {
+            padding: 5rem 4rem;
+            background: white;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .menu-header .tag {
+            color: var(--basilico);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .menu-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-top: 0.5rem;
+        }
+
+        .pizza-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pizza-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pizza-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(45, 24, 16, 0.08);
+        }
+
+        .pizza-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pizza-card .ingredients {
+            color: rgba(45, 24, 16, 0.65);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .pizza-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--tomato);
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--espresso);
+            color: var(--cream);
+            padding: 3rem 4rem;
+            text-align: center;
+        }
+
+        footer p { opacity: 0.7; font-size: 0.9rem; }
+
+        footer .logo { color: var(--cream); margin-bottom: 0.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
+            nav ul { gap: 1.5rem; }
+            .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; text-align: center; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-text p { margin: 0 auto 2rem; }
+            .menu { padding:
