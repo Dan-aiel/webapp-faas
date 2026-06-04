@@ -204,4 +204,92 @@
             .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; text-align: center; }
             .hero-text h1 { font-size: 3rem; }
             .hero-text p { margin: 0 auto 2rem; }
-            .menu { padding:
+            .menu { padding: 3rem 1.5rem; }
+            .menu-header h2 { font-size: 2.2rem; }
+            .pizza-svg { width: 280px; height: 280px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Pizzeria <span>Da Daniele</span></div>
+        <ul>
+            <li><a href="#menu">Menü</a></li>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <p class="tag">— Forno a legna dal 2025</p>
+            <h1>Authentische <em>italienische</em> Pizza.</h1>
+            <p>Handgemacht, langsam fermentiert, im Holzofen gebacken. So wie es sich gehört.</p>
+            <a href="#menu" class="btn">Menü ansehen</a>
+        </div>
+        <div>
+            <svg class="pizza-svg" width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+                <!-- Krustenring -->
+                <circle cx="210" cy="210" r="195" fill="#D4A574"/>
+                <circle cx="210" cy="210" r="180" fill="#E8B547"/>
+                <!-- Sauce -->
+                <circle cx="210" cy="210" r="165" fill="#C73E1D"/>
+                <!-- Käseflecken -->
+                <ellipse cx="160" cy="170" rx="35" ry="28" fill="#F4E4A1" opacity="0.85"/>
+                <ellipse cx="260" cy="200" rx="40" ry="30" fill="#F4E4A1" opacity="0.85"/>
+                <ellipse cx="180" cy="260" rx="32" ry="25" fill="#F4E4A1" opacity="0.85"/>
+                <ellipse cx="270" cy="280" rx="30" ry="22" fill="#F4E4A1" opacity="0.85"/>
+                <ellipse cx="130" cy="230" rx="25" ry="20" fill="#F4E4A1" opacity="0.85"/>
+                <!-- Pepperoni -->
+                <circle cx="155" cy="155" r="18" fill="#A02810"/>
+                <circle cx="270" cy="175" r="18" fill="#A02810"/>
+                <circle cx="220" cy="240" r="18" fill="#A02810"/>
+                <circle cx="155" cy="290" r="18" fill="#A02810"/>
+                <circle cx="295" cy="265" r="18" fill="#A02810"/>
+                <circle cx="115" cy="210" r="15" fill="#A02810"/>
+                <!-- Basilikum -->
+                <ellipse cx="200" cy="195" rx="8" ry="14" fill="#4A7C59" transform="rotate(-20 200 195)"/>
+                <ellipse cx="240" cy="265" rx="8" ry="14" fill="#4A7C59" transform="rotate(35 240 265)"/>
+                <ellipse cx="175" cy="225" rx="7" ry="12" fill="#4A7C59" transform="rotate(60 175 225)"/>
+                <ellipse cx="290" cy="220" rx="7" ry="12" fill="#4A7C59" transform="rotate(-45 290 220)"/>
+                <!-- Glanz-Highlight -->
+                <ellipse cx="150" cy="130" rx="40" ry="15" fill="white" opacity="0.15"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="menu-header">
+            <p class="tag">— Le Nostre Pizze</p>
+            <h2>Unsere Klassiker</h2>
+        </div>
+        <div class="pizza-grid">
+            <div class="pizza-card">
+                <h3>Margherita</h3>
+                <p class="ingredients">San Marzano Tomaten, Mozzarella di Bufala, frisches Basilikum, Olivenöl</p>
+                <p class="price">CHF 16.—</p>
+            </div>
+            <div class="pizza-card">
+                <h3>Diavola</h3>
+                <p class="ingredients">Tomaten, Mozzarella, scharfe Salami, Chiliöl, Oregano</p>
+                <p class="price">CHF 19.—</p>
+            </div>
+            <div class="pizza-card">
+                <h3>Quattro Formaggi</h3>
+                <p class="ingredients">Mozzarella, Gorgonzola, Parmigiano, Pecorino, Honig</p>
+                <p class="price">CHF 21.—</p>
+            </div>
+            <div class="pizza-card">
+                <h3>Prosciutto e Rucola</h3>
+                <p class="ingredients">Tomaten, Mozzarella, Parmaschinken, Rucola, Parmesan</p>
+                <p class="price">CHF 22.—</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Pizzeria <span style="color: var(--tomato);">Da Daniele</span></div>
+        <p>Deployed on Azure App Service · Modul 210</p>
+    </footer>
+</body>
+</html>
